@@ -26,7 +26,6 @@ jobs:
         memcached: [ false ]
 
         include:
-          # Include jobs for PHP 7.4 with memcached.
           - os: ubuntu-latest
             php: '7.4'
             db-type: 'mysql'
