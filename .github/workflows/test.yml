@@ -9,9 +9,6 @@ on:
       - '*'  
       
 jobs:
-  #
-  # Creates a PHPUnit test job for each PHP/MySQL combination.
-  #
   test-with-mysql:
     name: PHP ${{ matrix.php }}
     uses: syy25/wordpress-develop/.github/workflows/phpunit-tests-run.yml@trunk
