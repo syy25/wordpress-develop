@@ -9,9 +9,6 @@ on:
       - '*'  
       
 jobs:
-  #
-  # Creates a PHPUnit test job for each PHP/MySQL combination.
-  #
   test-with-mysql:
     name: PHP ${{ matrix.php }}
     uses: syy25/wordpress-develop/.github/workflows/phpunit-tests-run.yml@trunk
@@ -22,14 +19,13 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest ]
-        php: [ '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
+        php: [ '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
         db-type: [ 'mysql' ]
         db-version: [ '5.7', '8.0' ]
         multisite: [ false, true ]
         memcached: [ false ]
 
         include:
-          # Include jobs for PHP 7.4 with memcached.
           - os: ubuntu-latest
             php: '7.4'
             db-type: 'mysql'
@@ -73,7 +69,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest ]
-        php: [ '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
+        php: [ '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2' ]
         db-type: [ 'mariadb' ]
         db-version: [ '10.4', '10.6', '10.11', '11.0' ]
         multisite: [ false, true ]
