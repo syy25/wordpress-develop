@@ -841,7 +841,7 @@ switch ( $action ) {
 
 		<form name="lostpasswordform" id="lostpasswordform" action="<?php echo esc_url( network_site_url( 'wp-login.php?action=lostpassword', 'login_post' ) ); ?>" method="post">
 			<p>
-				<label for="user_login"><?php _e( 'Username or Email Address' ); ?></label>
+				<label for="user_login"><?php _e( 'Enter Username or Email Address' ); ?></label>
 				<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" autocapitalize="off" autocomplete="username" required="required" />
 			</p>
 			<?php
@@ -860,7 +860,7 @@ switch ( $action ) {
 			</p>
 		</form>
 
-		<p id="nav">
+		<span id="nav">
 			<a href="<?php echo esc_url( wp_login_url() ); ?>"><?php _e( 'Log in' ); ?></a>
 			<?php
 
@@ -874,7 +874,7 @@ switch ( $action ) {
 			}
 
 			?>
-		</p>
+		</span>
 		<?php
 
 		login_footer( 'user_login' );
